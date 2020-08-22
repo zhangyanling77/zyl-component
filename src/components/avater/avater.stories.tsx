@@ -7,6 +7,7 @@ export default {
 	component: Avatar,
 	decorators: [withKnobs],
 };
+
 type AvatarSizeType = keyof typeof AvatarSize;
 
 export const knobsAvatar = () => (
@@ -16,7 +17,7 @@ export const knobsAvatar = () => (
 			Object.keys(AvatarSize) as AvatarSizeType[],
 			"medium"
 		)}
-		username={text("username", "yehuozhili")}
+		username={text("username", "zhangyanling77")}
 		src={text(
 			"src",
 			"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -28,10 +29,10 @@ export const knobsAvatar = () => (
 export const large = () => (
 	<div>
 		<Avatar isLoading size="large" />
-		<Avatar size="large" username="yehuozhili" />
+		<Avatar size="large" username="zhangyanling77" />
 		<Avatar
 			size="large"
-			username="yehuozhili"
+			username="zhangyanling77"
 			src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		/>
 	</div>
@@ -42,7 +43,7 @@ export const medium = () => (
 		<Avatar isLoading />
 		<Avatar username="中文" />
 		<Avatar
-			username="yehuozhili"
+			username="zhangyanling77"
 			src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		/>
 	</div>
@@ -51,10 +52,10 @@ export const medium = () => (
 export const small = () => (
 	<div>
 		<Avatar isLoading size="small" />
-		<Avatar size="small" username="yehuozhili" />
+		<Avatar size="small" username="zhangyanling77" />
 		<Avatar
 			size="small"
-			username="yehuozhili"
+			username="zhangyanling77"
 			src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		/>
 	</div>
@@ -63,10 +64,10 @@ export const small = () => (
 export const tiny = () => (
 	<div>
 		<Avatar isLoading size="tiny" />
-		<Avatar size="tiny" username="yehuozhili" />
+		<Avatar size="tiny" username="zhangyanling77" />
 		<Avatar
 			size="tiny"
-			username="yehuozhili"
+			username="zhangyanling77"
 			src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		/>
 	</div>

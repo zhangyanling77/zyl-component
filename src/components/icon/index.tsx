@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
 import { icons } from "../shared/icons";
+
+export interface IconProps {
+	/** 图标名*/
+	icon: keyof typeof icons;
+	/** 是否块级元素 */
+	block?: boolean;
+	/** 颜色 */
+	color?: string;
+}
 
 const Svg = styled.svg<IconProps>`
 	display: ${(props) => (props.block ? "block" : "inline-block")};
@@ -15,15 +23,6 @@ const Path = styled.path`
 	fill: ${(props) => props.color};
 `;
 
-export interface IconProps {
-	/** 图标名*/
-	icon: keyof typeof icons;
-	/** 是否块级元素 */
-	block?: boolean;
-	/** 颜色 */
-	color?: string;
-}
-
 export function Icon(props: IconProps) {
 	const { block, icon, color } = props;
 	return (
@@ -33,8 +32,9 @@ export function Icon(props: IconProps) {
 			height="20px"
 			block={block}
 			{...props}
+			data-testid="icon-svg"
 		>
-			<Path d={icons[icon]} color={color} />
+			<Path data-testid="icon-path" d={icons[icon]} color={color} />
 		</Svg>
 	);
 }

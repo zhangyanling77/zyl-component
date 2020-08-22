@@ -29,7 +29,8 @@ const Image = styled.div<AvatarProps>`
 			height: ${AvatarSize.tiny}px;
 			width: ${AvatarSize.tiny}px;
 			line-height: ${AvatarSize.tiny}px;
-		`}
+		`
+	}
 
   ${(props) =>
 		props.size === "small" &&
@@ -37,7 +38,8 @@ const Image = styled.div<AvatarProps>`
 			height: ${AvatarSize.small}px;
 			width: ${AvatarSize.small}px;
 			line-height: ${AvatarSize.small}px;
-		`}
+		`
+	}
 
   ${(props) =>
 		props.size === "large" &&
@@ -45,13 +47,15 @@ const Image = styled.div<AvatarProps>`
 			height: ${AvatarSize.large}px;
 			width: ${AvatarSize.large}px;
 			line-height: ${AvatarSize.large}px;
-		`}
+		`
+	}
 
   ${(props) =>
 		!props.src &&
 		css`
 			background: ${!props.isLoading && "#37D5D3"};
-		`}
+		`
+	}
 
   img {
     width: 100%;
@@ -81,20 +85,26 @@ const Initial = styled.div<AvatarProps>`
   font-size: ${typography.size.s2}px;
   line-height: ${AvatarSize.medium}px;
 
-  ${props => props.size === "tiny" && css`
-    font-size: ${parseFloat(typography.size.s1) - 2}px;
-    line-height: ${AvatarSize.tiny}px;
-  `}
+	${props => props.size === "tiny" &&
+		css`
+			font-size: ${parseFloat(typography.size.s1) - 2}px;
+			line-height: ${AvatarSize.tiny}px;
+		`
+	}
 
-  ${props => props.size === "small" && css`
-    font-size: ${typography.size.s1}px;
-    line-height: ${AvatarSize.small}px;
-  `}
+	${props => props.size === "small" &&
+		css`
+			font-size: ${typography.size.s1}px;
+			line-height: ${AvatarSize.small}px;
+		`
+	}
 
-  ${props => props.size === "large" && css`
-    font-size: ${typography.size.s3}px;
-    line-height: ${AvatarSize.large}px;
-  `}
+	${props => props.size === "large" &&
+		css`
+			font-size: ${typography.size.s3}px;
+			line-height: ${AvatarSize.large}px;
+		`
+	}
 `;
 
 export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
@@ -107,6 +117,7 @@ export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
 	/** 头像大小 */
 	size?: keyof typeof AvatarSize;
 };
+
 interface a11yProps {
 	[key: string]: boolean | string;
 }
@@ -114,7 +125,7 @@ interface a11yProps {
 export function Avatar(props: AvatarProps) {
 	const { isLoading, src, username, size } = props;
 	const avatarFigure = useMemo(() => {
-		let avatarFigure = <Icon icon="useralt" />;
+		let avatarFigure = <Icon icon="useralt" data-testid="icon-svg" />;
 		const a11yProps: a11yProps = {};
 		if (isLoading) {
 			a11yProps["aria-busy"] = true;
@@ -126,7 +137,7 @@ export function Avatar(props: AvatarProps) {
 		} else {
 			a11yProps["aria-label"] = username!;
 			avatarFigure = (
-				<Initial size={size} aria-hidden="true">
+				<Initial size={size} aria-hidden="true" data-testid="avatar-username">
 					{username!.substring(0, 1)}
 				</Initial>
 			);

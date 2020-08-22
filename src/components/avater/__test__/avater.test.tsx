@@ -22,6 +22,7 @@ describe("test Avatar component", () => {
 		let username = wrapper.getByTestId("avatar-username");
 		expect(username).toHaveStyle(`line-height:${AvatarSize.medium}px`);
 		cleanup();
+
 		wrapper = render(<Avatar size="large"></Avatar>);
 		expect(wrapper).toMatchSnapshot();
 		div = wrapper.getByTestId("avatar-div");
@@ -31,6 +32,7 @@ describe("test Avatar component", () => {
 		username = wrapper.getByTestId("avatar-username");
 		expect(username).toHaveStyle(`line-height:${AvatarSize.large}px`);
 		cleanup();
+
 		wrapper = render(<Avatar size="small"></Avatar>);
 		div = wrapper.getByTestId("avatar-div");
 		expect(div).toHaveStyle(`height:${AvatarSize.small}px`);
@@ -39,6 +41,7 @@ describe("test Avatar component", () => {
 		username = wrapper.getByTestId("avatar-username");
 		expect(username).toHaveStyle(`line-height:${AvatarSize.small}px`);
 		cleanup();
+
 		wrapper = render(<Avatar size="tiny"></Avatar>);
 		div = wrapper.getByTestId("avatar-div");
 		expect(div).toHaveStyle(`height:${AvatarSize.tiny}px`);
@@ -47,6 +50,7 @@ describe("test Avatar component", () => {
 		username = wrapper.getByTestId("avatar-username");
 		expect(username).toHaveStyle(`line-height:${AvatarSize.tiny}px`);
 		cleanup();
+
 		wrapper = render(<Avatar size="medium"></Avatar>);
 		div = wrapper.getByTestId("avatar-div");
 		expect(div).toHaveStyle(`height:${AvatarSize.medium}px`);
@@ -62,6 +66,7 @@ describe("test Avatar component", () => {
 		let svg = wrapper.getByTestId("icon-svg");
 		expect(svg).toBeVisible();
 		cleanup();
+
 		wrapper = render(
 			<Avatar isLoading username="123" src="/" size="tiny"></Avatar>
 		);
@@ -70,29 +75,31 @@ describe("test Avatar component", () => {
   });
   
 	it("should correct img", () => {
-		let wrapper = render(<Avatar src="www.test.com"></Avatar>);
+		let wrapper = render(<Avatar src="www.zhangyanling77.com"></Avatar>);
 		let img = wrapper.getByTestId("avatar-img");
 		expect(img.tagName).toEqual("IMG");
 		expect(img).toHaveStyle("width:100%");
-		expect(img).toHaveAttribute("src", "www.test.com");
+		expect(img).toHaveAttribute("src", "www.zhangyanling77.com");
 		expect(img).toHaveAttribute("alt", "loading");
 		cleanup();
+
 		wrapper = render(
-			<Avatar src="www.yehuozhili.xyz" username="yehuozhili"></Avatar>
+			<Avatar src="www.zhangyanling77.com" username="zhangyanling77"></Avatar>
 		);
 		img = wrapper.getByTestId("avatar-img");
-		expect(img).toHaveAttribute("src", "www.yehuozhili.xyz");
-		expect(img).toHaveAttribute("alt", "yehuozhili");
+		expect(img).toHaveAttribute("src", "www.zhangyanling77.com");
+		expect(img).toHaveAttribute("alt", "zhangyanling77");
   });
   
 	it("should render correct username", () => {
-		let wrapper = render(<Avatar username="yehuozhili"></Avatar>);
+		let wrapper = render(<Avatar username="zhangyanling77"></Avatar>);
 		expect(wrapper).toMatchSnapshot();
 		let div = wrapper.getByTestId("avatar-div");
-		expect(div).toHaveStyle("text-transform:uppercase");
-		let username = wrapper.getByText("y");
+		expect(div).toHaveStyle("text-transform: uppercase");
+		let username = wrapper.getByText("z");
 		expect(username).toBeVisible();
 		cleanup();
+
 		wrapper = render(<Avatar username="中文汉字"></Avatar>);
 		username = wrapper.getByText("中");
 		expect(username).toBeTruthy();

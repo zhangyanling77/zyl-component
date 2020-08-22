@@ -5,12 +5,13 @@ import { icons } from "../../shared/icons";
 
 function IconTest(icon: IconProps["icon"]) {
 	const wrapper = render(<Icon icon={icon}></Icon>);
+	expect(wrapper).toMatchSnapshot();
 	const path = wrapper.queryByTestId("icon-path");
 	expect(path).toHaveAttribute("d", icons[icon]);
 	cleanup();
 }
 
-describe(" test Icon component", () => {
+describe("test Icon component", () => {
 
 	it("it should render correct icon ", () => {
 		Object.keys(icons).forEach((key) => {
@@ -29,6 +30,7 @@ describe(" test Icon component", () => {
 		let path = wrapper.queryByTestId("icon-path");
 		expect(path).toHaveAttribute("color", "black");
 		cleanup();
+		
 		wrapper = render(<Icon icon="mobile" color="blue"></Icon>);
 		path = wrapper.queryByTestId("icon-path");
 		expect(path).toHaveAttribute("color", "blue");

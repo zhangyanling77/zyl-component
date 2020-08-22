@@ -18,6 +18,7 @@ const disabledProps: ButtonProps = {
   disabled: true,
   onClick: jest.fn(),
 };
+
 describe("test Button component", () => {
   it("should render the correct default button", () => {
     const wrapper = render(

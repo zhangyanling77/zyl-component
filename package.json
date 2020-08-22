@@ -1,6 +1,6 @@
 {
   "name": "@zhangyanling77/zyl-component",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
