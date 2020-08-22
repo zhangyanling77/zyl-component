@@ -1,6 +1,6 @@
 {
   "name": "@zhangyanling77/zyl-component",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -97,6 +97,7 @@
     "babel-loader": "^8.1.0",
     "coveralls": "^3.1.0",
     "np": "^6.4.0",
+    "plop": "^2.7.4",
     "prettier": "2.0.5",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
