@@ -115,7 +115,7 @@ const htmlEscapes = {
 const reUnescapedHtml = /[&<>"']/g;
 const reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
 
-function escape(string: string) {
+export function escape(string: string) {
 	return string && reHasUnescapedHtml.test(string)
 		? string.replace(
 				reUnescapedHtml,
@@ -143,3 +143,5 @@ export function Highlight(props: PropsWithChildren<HighlightProps>) {
 		</HighlightBlock>
 	);
 }
+
+export default Highlight;

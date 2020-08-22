@@ -164,3 +164,5 @@ Avatar.defaultProps = {
 	src: null,
 	size: "medium",
 };
+
+export default Avatar;
