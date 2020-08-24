@@ -1,6 +1,6 @@
 {
   "name": "@zhangyanling77/zyl-component",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "main": "dist/zyl-component.js",
   "module": "dist/zyl-component.modern.js",
