@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalStyle } from "../src/components/shared/global";
-import { addDecorator, addParameters } from "@storybook/react";
+import { addDecorator, addParameters, configure } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 
 export const parameters = {
@@ -16,7 +16,19 @@ addParameters({
     hideEmpty: true,
   },
 });
+
 addDecorator(withA11y);
+
+// 自定义目录顺序
+const loaderFn = () => {
+  return [
+    // 目录顺序
+    // require("../src/stories/Color.stories.mdx"),
+    // require("../src/stories/Typography.stories.mdx"),
+  ];
+};
+configure(loaderFn, module);
+
 addDecorator((story) => (
   <>
     <GlobalStyle />

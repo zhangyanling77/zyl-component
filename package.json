@@ -1,9 +1,11 @@
 {
   "name": "@zhangyanling77/zyl-component",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": false,
-  "module": "dist/index.js",
+  "main": "dist/zyl-component.js",
+  "module": "dist/zyl-component.modern.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zhangyanling77"
   },
@@ -23,13 +25,16 @@
   "homepage": "https://github.com/zhangyanling77/zyl-component#readme",
   "scripts": {
     "start": "react-scripts start",
-    "build": "tsc -p tsconfig.build.json",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build-cjs": "microbundle build --tsconfig tsconfig.build.json --jsx React.createElement --compress=false --format cjs",
+    "build-all": "microbundle build --tsconfig tsconfig.build.json --jsx React.createElement --compress=false",
+    "build": "rm -rf ./dist && npm run build-all && npm run build-cjs",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook --no-dll --quiet",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "coverage": "react-scripts test --coverage --watchAll=false",
-    "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "postinstall": "patch-package",
+    "release": "npm run build && np"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -96,8 +101,12 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "coveralls": "^3.1.0",
+    "lint-staged": "^10.2.11",
+    "microbundle": "^0.12.3",
     "np": "^6.4.0",
+    "patch-package": "^6.2.2",
     "plop": "^2.7.4",
+    "pre-commit": "^1.2.2",
     "prettier": "2.0.5",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
