@@ -2,10 +2,10 @@
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/zhangyanling77/zyl-component)
 [![Coverage Status](https://coveralls.io/repos/github/zhangyanling77/zyl-component/badge.svg?branch=master)](https://coveralls.io/github/zhangyanling77/zyl-component?branch=master)
-<!-- ![GitHub All Releases](https://img.shields.io/github/downloads/zhangyanling77/zyl-component/total) -->
-<!-- ![npm](https://img.shields.io/npm/v/zyl-component) -->
 ![npm bundle size](https://img.shields.io/bundlephobia/min/zyl-component)
 ![npm](https://img.shields.io/npm/dt/zyl-component)
+<!-- ![GitHub All Releases](https://img.shields.io/github/downloads/zhangyanling77/zyl-component/total) -->
+<!-- ![npm](https://img.shields.io/npm/v/zyl-component) -->
 
 
 ### 使用patch-package修改Node.js依赖包内容
