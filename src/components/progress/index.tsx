@@ -115,7 +115,7 @@ export type ProgressProps = {
 	classname?: string;
 };
 
-export function Progress(props: PropsWithChildren< ProgressProps>) {
+export function Progress(props: PropsWithChildren<ProgressProps>) {
 	const { 
 		count,
 		countNumber,
