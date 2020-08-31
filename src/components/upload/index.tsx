@@ -606,7 +606,8 @@ export function Upload(props: UploadProps) {
         <div
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
+					onMouseUp={handleMouseUp}
+					onMouseLeave={handleMouseLeave} // 
         >
           <canvas
             width={300}
@@ -816,3 +817,5 @@ export function ImageList(props: imageListProps) {
     </React.Fragment>
   );
 }
+
+export default Upload;
