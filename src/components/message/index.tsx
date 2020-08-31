@@ -10,40 +10,7 @@ import ReactDom, {
 import styled, { keyframes, css } from "styled-components";
 import { color, typography, messageBoxShadow } from "../shared/styles";
 import { Icon } from '../icon';
-
-export const messageOpenAnimate = keyframes`
-  0% {
-    opacity: 0;
-    margin-top: -30px;
-  }
-  50% {
-    opacity: 0.1;
-    margin-top: -15px;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 0;
-  }
-`;
-
-export const messageCloseAnimate = keyframes`
-  0% {
-    opacity: 1;
-    margin-top: 0;
-  }
-  100% {
-    opacity: 0;
-    margin-top: -30px;
-  }
-`;
-export const iconSpin = keyframes`
-  0% {
-     transform: rotate(0deg);
-  }
-  100% {
-     transform: rotate(360deg);
-  }
-`;
+import { iconSpin, messageCloseAnimate, messageOpenAnimate } from "../shared/animation";
 
 const MessageText = styled.span<{ bg: string; fc: string }>`
   display: inline-block;
