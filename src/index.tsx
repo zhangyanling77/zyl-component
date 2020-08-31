@@ -1,3 +1,5 @@
+import { format } from 'path';
+
 // 
 export * from './components/shared/global';
 export * from './components/shared/styles';
@@ -13,4 +15,5 @@ export * from './components/radio';
 export * from './components/progress';
 export * from './components/modal';
 export * from './components/message';
-export * from "./components/upload";
+export * from './components/upload';
+export * from './components/tree';
