@@ -10,32 +10,9 @@ import React, {
 import {createPortal} from "react-dom";
 import Button from "../button";
 import { Icon } from "../icon";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
+import { modalOpenAnimate, modalCloseAnimate } from "../shared/animation";
 import { typography } from "../shared/styles";
-
-export const modalOpenAnimate = keyframes`
-  0% {
-    opacity: 0;
-    transform: scaleY(0,0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1,1);
-    transform-origin: center;
-  }
-`;
-
-export const modalCloseAnimate = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(1,1);
-    transform-origin: center;
-  }
-  100% {
-    opacity: 0;
-    transform: scaleY(0,0);
-  }
-`;
 
 const ModalWrapper = styled.div`
   position: fixed;
