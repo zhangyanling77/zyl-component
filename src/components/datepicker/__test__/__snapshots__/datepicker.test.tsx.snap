@@ -11,7 +11,7 @@ Object {
         <input
           aria-label="date picker"
           style="box-shadow: none; outline: none;"
-          value="2020-9-3"
+          value="2020-9-5"
         />
         <span
           class="sc-fznZeY lhwhtE"
@@ -42,7 +42,7 @@ Object {
       <input
         aria-label="date picker"
         style="box-shadow: none; outline: none;"
-        value="2020-9-3"
+        value="2020-9-5"
       />
       <span
         class="sc-fznZeY lhwhtE"
