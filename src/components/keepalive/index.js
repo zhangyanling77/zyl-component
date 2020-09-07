@@ -18,9 +18,10 @@ export function AliveScope(props) {
   const keep = useMemo(() => {
     return (id, children) =>
       new Promise((resolve) => {
-        setState({
+        setState(pre => ({
+          ...pre,
           [id]: { id, children },
-        });
+        }));
         setTimeout(() => {
           //需要等待setState渲染完拿到实例返回给子组件。
           resolve(ref[id]);
